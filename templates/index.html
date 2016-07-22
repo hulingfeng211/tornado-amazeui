@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Home</title>
+
+    <link href="/static/node_modules/amazeui-touch/dist/amazeui.touch.min.css" rel="stylesheet">
+
+    
+  </head>
+  <body>
+    <div id="root" class="root"></div>
+
+    
+    <script src="/static/js/bundle.js"></script>
+    <script type="text/javascript">
+    window.onload = maxWindow;
+    //window full screen
+    function maxWindow() {
+        window.moveTo(0, 0);
+
+
+        if (document.all) {
+            top.window.resizeTo(screen.availWidth, screen.availHeight);
+        }
+
+        else if (document.layers || document.getElementById) {
+            if (top.window.outerHeight < screen.availHeight || top.window.outerWidth < screen.availWidth) {
+                top.window.outerHeight = screen.availHeight;
+                top.window.outerWidth = screen.availWidth;
+            }
+        }
+    }
+
+</script>
+  </body>
+</html>
