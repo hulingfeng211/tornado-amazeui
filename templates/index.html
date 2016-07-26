@@ -8,7 +8,12 @@
     <title>Home</title>
 
     <link href="/static/node_modules/amazeui-touch/dist/amazeui.touch.min.css" rel="stylesheet">
-
+    <style type="text/css">
+        #root:-webkit-full-screen {
+          width: 100%;
+          height: 100%;
+        }
+    </style>
     
   </head>
   <body>
@@ -17,23 +22,18 @@
     
     <script src="/static/js/bundle.js"></script>
     <script type="text/javascript">
-    window.onload = maxWindow;
-    //window full screen
-    function maxWindow() {
-        window.moveTo(0, 0);
-
-
-        if (document.all) {
-            top.window.resizeTo(screen.availWidth, screen.availHeight);
-        }
-
-        else if (document.layers || document.getElementById) {
-            if (top.window.outerHeight < screen.availHeight || top.window.outerWidth < screen.availWidth) {
-                top.window.outerHeight = screen.availHeight;
-                top.window.outerWidth = screen.availWidth;
+    $(document).on($.AMUI.fullscreen.raw.fullscreenchange, function () {
+        console.log('Am I fullscreen? ' + ($.AMUI.fullscreen.isFullscreen ? 'Yes' : 'No'));
+      });
+    
+     window.onload=function(){
+         if ($.AMUI.fullscreen.enabled) {
+                $.AMUI.fullscreen.request();
+            } else {
+                // Ignore or do something else
             }
-        }
-    }
+        
+     }
 
 </script>
   </body>

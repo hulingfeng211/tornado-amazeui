@@ -7,7 +7,6 @@ import {Router,browserHistory} from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 
 import configureStore from './store/configureStore';
-//import FullScreen from '../lib/FullScreen';
 import routes from './routes';
 
 const store = configureStore(browserHistory)

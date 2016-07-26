@@ -24,7 +24,7 @@ class AppMenu extends React.Component {
 							menus.map((menu,index)=> {
 							return (<Col key={index}>
 										<Link to={menu.to}><Icon name={menu.icon} key={index}> </Icon>
-										<div className="sk-icon-name" text-tuncate>
+										<div className="sk-icon-name" >
 											{menu.name}
 										</div></Link>
 									</Col>);

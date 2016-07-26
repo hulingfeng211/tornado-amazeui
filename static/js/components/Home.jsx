@@ -16,7 +16,7 @@ class Home extends Component {
         <Container fill scrollable >
           <AppMenu />
         </Container>
-      </View>
+      </View> 
     )
   }
 }
